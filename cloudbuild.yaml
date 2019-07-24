@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/go'
+  args: ['test', 'repository']
+  env: ['PROJECT_ROOT=repository']
+
+- id: "building image"
+  name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '--build-arg'
+  - 'version=0.0.1'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/go-hpa:latest'
+  - '.'
+images:
+- 'gcr.io/$PROJECT_ID/go-hpa:latest'
