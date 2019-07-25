@@ -20,6 +20,6 @@ func calc(x float64) float64{
 
 func main() {
 	http.HandleFunc("/", index)
-	fmt.Println("Server is up and listening on port 8080.")
-	http.ListenAndServe(":8080", nil)
+	fmt.Println("Server is up and listening on port 80.")
+	http.ListenAndServe(":80", nil)
 }
