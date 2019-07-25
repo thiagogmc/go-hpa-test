@@ -13,11 +13,11 @@ spec: #spec do deployment
       - name: golang
         image: thiagogmc/go-hpa
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 
         resources:
           requests:
             # memory: "64Mi"
             cpu: "50m"
           limits:
-            cpy: "100m"
+            cpu: "100m"
